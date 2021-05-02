@@ -64,7 +64,7 @@
         </v-col>
         <v-col color="primary" class="text-justify mt-5" cols="12" md="2">
           <div v-for="social in socials" :key="social" class="pa-2 text-body-2">
-            {{ social }}
+           <a :href="social.url" target="_blank"> {{ social.name }} </a>
           </div>
         </v-col>
     </v-row>
@@ -129,10 +129,22 @@ export default {
         'Whitepaper',
     ],
     socials: [
-        'Twitter',
-        'Telegram',
-        'Youtube',
-        'Medium',
+      {
+        name: 'Twitter',
+        url: 'https://twitter.com/Qlip_it?s=09'
+      },
+      {
+        name: 'Telegram',
+        url: 'https://t.me/qlipit'
+      },
+      {
+        name: 'Youtube',
+        url: 'https://youtube.com/channel/UCNkWrpHYJ28UwnDvbe5VoHg'
+      },
+      {
+        name: 'Medium',
+        url: ' https://qlipit-io.medium.com/'
+      },
     ],
   }),
 
@@ -148,3 +160,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>
