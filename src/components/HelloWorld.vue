@@ -39,7 +39,7 @@
         <v-row justify="center">
           <v-card class="text-center card-border mt-5 pa-5" color="#0E0E12">
             <v-card-text class="px-9">
-              <v-avatar color="#16161E" size="90"><span class="white--text headline">36</span></v-avatar>
+              <v-avatar color="#16161E" size="90"><v-img src="@/assets/icons8_paint.png" width="40" contain class="shrink"></v-img></v-avatar>
               <h2 class="font-weight-bold text--primary my-3">
                 Upload File in Any Format
               </h2>
@@ -75,9 +75,10 @@
         class="mb-5"
         cols="12" xl="6" lg="6"
       >
-        <v-card max-width="380" color="#0E0E12" class="card-border px-5" outlined>
+        <v-card max-width="400" color="#0E0E12" class="card-border px-5 float-left" outlined>
           <v-card-text class="px-5">
-        <h2 class="font-weight-bold text--primary mb-3">
+            <v-avatar tile size="164"><v-img src="@/assets/Africa.png" contain></v-img></v-avatar>
+        <h2 class="font-weight-bold text--primary my-3">
           African Mask
         </h2>
         <p class="subheading font-weight-regular" :style="{color: '#788CA0'}">
@@ -87,6 +88,54 @@
         <p><small :style="{color: '#788CA0'}">Bid </small>&nbsp;<strong class="text--primary"> 10,000 QLIP</strong></p>
           </v-card-text>
         </v-card>
+      </v-col>
+    </v-row>
+    <v-row class="mt-9">
+      <v-col
+        class="mb-5"
+        cols="12" xl="6" lg="6"
+      >
+        <v-card max-width="350" color="#16161E" class="card-border px-5 mx-auto" outlined>
+          <v-card-text class="px-3 mb-9">
+            <v-avatar size="90" class="avatar-border"><v-img src="@/assets/icons8_stage.png" class="shrink" width="40" contain></v-img></v-avatar>
+            <h2 class="font-weight-bold text--primary my-3">
+              QLIP Exhibit
+            </h2>
+            <p class="subheading font-weight-regular mb-9" :style="{color: '#788CA0'}">
+            Showcase your private or public collection, to fans and collectors
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+
+      <v-col
+        class="mb-5"
+        cols="12" xl="6" lg="6"
+      >
+        <v-card max-width="350" color="#0E0E12" class="card-border px-5 mx-auto" outlined>
+          <v-card-text class="px-3 mb-9">
+            <v-avatar size="90" color="#16161E"><v-img src="@/assets/icons8_online_store.png" class="shrink" width="40" contain></v-img></v-avatar>
+            <h2 class="font-weight-bold text--primary my-3">
+              QLIP Decentralized store
+            </h2>
+            <p class="subheading font-weight-regular mb-9" :style="{color: '#788CA0'}">
+            Mint your memories on the Blockchain and make them private
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row class="mt-9">
+      <v-col
+        class="mb-5 text-center" cols="12"
+      >        
+        <h1 class="display-2 font-weight-bold mb-3 mt-5">
+          QLIP Collectible Gaming
+        </h1>
+
+        <p class="subheading font-weight-regular mb-5" :style="{color: '#788CA0'}">
+          Buy and sell your NFT’s and Collectibles in QLP, BNB, USDT, BTC on the <br> QLIP marketplace.
+        </p>
       </v-col>
     </v-row>
   </v-container>
@@ -158,5 +207,9 @@
 
 .card-border {
   border: 1.5px solid #16161E !important;
+}
+
+.avatar-border {
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
 }
 </style>

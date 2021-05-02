@@ -7,12 +7,12 @@
     <v-app-bar-nav-icon v-if="isMobile" @click="overlay = !overlay"></v-app-bar-nav-icon>
       <div class="ml-5 d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
+          alt="QLIP Logo"
+          class="mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="@/assets/logo.png"
           transition="scale-transition"
-          width="40"
+          width="21"
         />
         <v-app-bar-title>QLIP</v-app-bar-title>
       </div>
