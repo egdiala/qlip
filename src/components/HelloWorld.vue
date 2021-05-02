@@ -75,7 +75,7 @@
         class="mb-5"
         cols="12" xl="6" lg="6"
       >
-        <v-card max-width="400" color="#0E0E12" class="card-border px-5 float-left" outlined>
+        <v-card width="320" color="#0E0E12" class="card-border px-5 mx-auto" outlined>
           <v-card-text class="px-5">
             <v-avatar tile size="164"><v-img src="@/assets/Africa.png" contain></v-img></v-avatar>
         <h2 class="font-weight-bold text--primary my-3">
@@ -97,7 +97,7 @@
       >
         <v-card max-width="350" color="#16161E" class="card-border px-5 mx-auto" outlined>
           <v-card-text class="px-3 mb-9">
-            <v-avatar size="90" class="avatar-border"><v-img src="@/assets/icons8_stage.png" class="shrink" width="40" contain></v-img></v-avatar>
+            <v-avatar size="90" class="avatar-border mb-4"><v-img src="@/assets/icons8_stage.png" class="shrink" width="40" contain></v-img></v-avatar>
             <h2 class="font-weight-bold text--primary my-3">
               QLIP Exhibit
             </h2>
@@ -114,7 +114,7 @@
       >
         <v-card max-width="350" color="#0E0E12" class="card-border px-5 mx-auto" outlined>
           <v-card-text class="px-3 mb-9">
-            <v-avatar size="90" color="#16161E"><v-img src="@/assets/icons8_online_store.png" class="shrink" width="40" contain></v-img></v-avatar>
+            <v-avatar size="90" color="#16161E" class="mb-4"><v-img src="@/assets/icons8_online_store.png" class="shrink" width="40" contain></v-img></v-avatar>
             <h2 class="font-weight-bold text--primary my-3">
               QLIP Decentralized store
             </h2>
@@ -125,7 +125,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row class="mt-9">
+    <v-row class="my-9">
       <v-col
         class="mb-5 text-center" cols="12"
       >        
@@ -138,6 +138,97 @@
         </p>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col
+        cols="12" xl="4" lg="4" v-for="icon in recent" :key="icon.title"
+      >
+      <v-card color="#0E0E12" class="card-border pa-5 mx-auto" outlined>
+        <v-card-text>
+          <v-row align="center" justify="between">
+          <v-avatar size="50" color="#16161E" >
+            <v-img
+              :alt="`${icon.title} avatar`"
+              :src="require(`@/assets/${icon.avatar}`)" class="shrink" width="25" contain
+            ></v-img>
+          </v-avatar>
+          <small class="ml-2" v-text="icon.title"></small>
+          </v-row>       
+        </v-card-text>
+      </v-card>   
+      </v-col>
+    </v-row>
+    <v-row class="my-9">
+      <v-col
+        class="mb-5 text-center" cols="12"
+      >        
+        <h1 class="display-2 font-weight-bold mb-3 mt-5">
+          QLIP MarketPlace
+        </h1>
+
+        <p class="subheading font-weight-regular mb-5" :style="{color: '#788CA0'}">
+          Buy and sell your NFT’s and Collectibles in QLP, BNB, USDT, BTC on the <br> QLIP marketplace.
+        </p>
+      </v-col>
+    </v-row>
+    <v-row class="ma-2">
+      <v-col
+        cols="12" xl="4" lg="4" v-for="place in marketplace" :key="place" class="d-flex flex-column"
+      >
+        <v-card width="350" color="#0E0E12" class="card-border px-5 mx-auto flex d-flex flex-column" outlined>
+          <v-card-text class="mt-3 mb-9">
+            <v-avatar size="90" color="#16161E" class="mb-4"><v-img :src="require(`@/assets/${place.avatar}`)" class="shrink" width="45" contain></v-img></v-avatar>
+            <h2 class="font-weight-bold text--primary my-3">
+              {{place.title}}
+            </h2>
+            <p class="subheading font-weight-regular mb-9" :style="{color: '#788CA0'}">
+            {{place.subtitle}}
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row class="my-5">
+      <v-col
+        class="mb-5 text-center" cols="12"
+      >        
+        <h1 class="display-2 font-weight-bold mb-3 mt-5">
+          QLIP Token
+        </h1>
+
+        <p class="subheading font-weight-regular mb-5" :style="{color: '#788CA0'}">
+          Tokenomics Break Down.
+        </p>
+      </v-col>
+    </v-row>
+    <v-row class="mb-4">
+      <v-col cols="12" xl="5" lg="5">
+      </v-col>
+      <v-col cols="12" xl="7" lg="7">
+        <v-card max-width="480" color="#0E0E12" class="card-border float-left" outlined>
+          <v-card-text>
+            <v-list-item two-line>
+              <v-list-item-avatar size="70" color="#16161E">
+                <v-img src="@/assets/logo_avatar.png" class="shrink mx-auto" width="30" contain></v-img>
+              </v-list-item-avatar>
+
+              <v-list-item-content>
+                <v-list-item-title class="mb-3">Total Supply: 10,000,000 $QLP</v-list-item-title>
+                <v-list-item-subtitle :style="{color: '#788CA0'}">Token Name: QLIP</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+            <v-row class="px-2">
+              <v-col cols="12" xl="6" lg="6" v-for="item in items" :key="item">
+                <v-icon :color="item.icon">
+                  mdi-circle-medium
+                </v-icon>
+                <small :style="{color: '#788CA0'}">{{item.small}}</small> &nbsp; <strong class="text--primary">{{item.large}}</strong>
+              </v-col>
+            </v-row>
+
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
@@ -146,54 +237,84 @@
     name: 'HelloWorld',
 
     data: () => ({
-      ecosystem: [
+      recent: [
         {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
+          title: 'Packs completion',
+          avatar: 'icons8_cards.png',
         },
         {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
+          title: 'NFT Lock up to reduce fees and earn $QLP',
+          avatar: 'icons8_locker.png',
         },
         {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com',
+          title: 'Use of Qlip NFT’s in Metaverses',
+          avatar: 'icons8_metamorphose.png',
         },
         {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com',
+          title: 'Rap battle games with rapstar NFT’s',
+          avatar: 'icons8_musically.png',
         },
         {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuejs.com/vuetify',
+          title: 'Lottery biddings and winnings',
+          avatar: 'icons8_win.png',
         },
         {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs',
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify',
+          title: 'Auctions games and Avatar Creation',
+          avatar: 'icons8_customer_2.png',
         },
       ],
-      whatsNext: [
+      marketplace: [
         {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
+          title: 'Offchain NFTs',
+          subtitle: 'Users will determine if their NFT is a Motion Graphic, Meme, Audio Visual (Music), Fashion design, Poetry or Others.',
+          avatar: 'icons8_delete_link.png',
         },
         {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
+          title: 'Order in NFTs',
+          subtitle: 'Artiste can mint their works and have it delivered to the NFT buyer. Anyone who buys the NFT can get the physical work be it art on canvas, sculpture or fashion piece delivered to them.',
+          avatar: 'icons8_paint.png',
         },
         {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
+          title: 'NFT Collab',
+          subtitle: 'Collaborate on the blockchain with various artists to create an NFT by using our automated unique identifier, set the percentages in royalties and get returns on every collaboration without breaking a sweat. ',
+          avatar: 'icons8_collaboration.png',
+        },
+      ],
+      items: [
+        {
+          small: 'Private Sale:',
+          large: '5% at $0.1',
+          icon: '#4B23CC',
+        },
+        {
+          small: 'Airdrops:',
+          large: '10%',
+          icon: '#FF7347',
+        },
+        {
+          small: 'Public Sale:',
+          large: '15% at $0.5',
+          icon: '#35DCF3',
+        },
+        {
+          small: 'Marketing:',
+          large: '10%',
+          icon: '#985AFE',
+        },
+        {
+          small: 'Team:',
+          large: '10%',
+          icon: '#FFB347',
+        },
+        {
+          small: 'Treasury:',
+          large: '25%',
+          icon: '#004BFF',
+        },
+        {
+          small: 'Mined via Staking:',
+          large: '25%',
+          icon: '#30D171',
         },
       ],
     }),

@@ -43,7 +43,34 @@
     <v-main :style="{background: '#0E0E12'}">
       <HelloWorld/>
     </v-main>
-      <v-overlay :opacity="opacity" :value="overlay">
+      <v-footer color="#0E0E12"
+    dark
+    padless
+  >
+  <v-container>
+    <v-row>
+        <v-col color="primary" class="text-justify mt-5" cols="12" xl="5" lg="5">
+            <v-list-item>
+                <v-img src="@/assets/logo_footer.png" class="shrink mr-2" width="30" contain></v-img>
+              <v-list-item-content>
+                <v-list-item-title>QLIP</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+        </v-col>
+        <v-col color="primary" class="text-justify mt-5" cols="12" md="2">
+          <div v-for="url in urls" :key="url" class="pa-2 text-body-2">
+            {{ url }}
+          </div>
+        </v-col>
+        <v-col color="primary" class="text-justify mt-5" cols="12" md="2">
+          <div v-for="social in socials" :key="social" class="pa-2 text-body-2">
+            {{ social }}
+          </div>
+        </v-col>
+    </v-row>
+  </v-container>
+  </v-footer>
+    <v-overlay :opacity="opacity" :value="overlay">
         <v-icon @click="overlay = false" size="1.5x" class="custom-class" style="position: fixed; top: 2%; right: 1.5em;">mdi-close</v-icon>
         <v-row class="text-center">
           <v-col cols="12">
@@ -94,6 +121,19 @@ export default {
   data: () => ({
     opacity: 0.9,
     overlay: false,
+    urls: [
+        'Mint Store',
+        'Marketplace',
+        'Roadmap',
+        'QLIP Token',
+        'Whitepaper',
+    ],
+    socials: [
+        'Twitter',
+        'Telegram',
+        'Youtube',
+        'Medium',
+    ],
   }),
 
   computed:{
