@@ -58,7 +58,7 @@
     <v-row class="mt-9">
       <v-col
         class="mb-5"
-        cols="12" xl="6" lg="6"
+        cols="12" xl="6" lg="6" md="6"
       >
         <h2 class="display-2 font-weight-bold mb-3">
           QLIP Collectibles
@@ -73,7 +73,7 @@
 
       <v-col
         class="mb-5"
-        cols="12" xl="6" lg="6"
+        cols="12" xl="6" lg="6" md="6"
       >
         <v-card width="320" color="#0E0E12" class="card-border px-5 mx-auto" outlined>
           <v-card-text class="px-5">
@@ -93,7 +93,7 @@
     <v-row class="mt-9">
       <v-col
         class="mb-5"
-        cols="12" xl="6" lg="6"
+        cols="12" xl="6" lg="6" md="6"
       >
         <v-card max-width="350" color="#16161E" class="card-border px-5 mx-auto" outlined>
           <v-card-text class="px-3 mb-9">
@@ -110,7 +110,7 @@
 
       <v-col
         class="mb-5"
-        cols="12" xl="6" lg="6"
+        cols="12" xl="6" lg="6" md="6"
       >
         <v-card max-width="350" color="#0E0E12" class="card-border px-5 mx-auto" outlined>
           <v-card-text class="px-3 mb-9">
@@ -140,9 +140,9 @@
     </v-row>
     <v-row>
       <v-col
-        cols="12" xl="4" lg="4" v-for="icon in recent" :key="icon.title"
+        cols="12" xl="4" lg="4" md="4" class="d-flex flex-column" v-for="icon in recent" :key="icon.title"
       >
-      <v-card color="#0E0E12" class="card-border pa-5 mx-auto" outlined>
+      <v-card width="350" color="#0E0E12" class="card-border pa-5 mx-auto flex d-flex flex-column" outlined>
         <v-card-text>
           <v-row align="center" justify="between">
           <v-avatar size="50" color="#16161E" >
@@ -172,7 +172,7 @@
     </v-row>
     <v-row class="ma-2">
       <v-col
-        cols="12" xl="4" lg="4" v-for="place in marketplace" :key="place" class="d-flex flex-column"
+        cols="12" xl="4" lg="4" md="4" v-for="place in marketplace" :key="place" class="d-flex flex-column"
       >
         <v-card width="350" color="#0E0E12" class="card-border px-5 mx-auto flex d-flex flex-column" outlined>
           <v-card-text class="mt-3 mb-9">
@@ -229,10 +229,10 @@
       </v-col>
     </v-row>
     <v-row class="mb-4">
-      <v-col cols="12" xl="5" lg="5">
+      <v-col cols="12" xl="5" lg="5" md="5">
         <doughnut-chart :chartdata="chartDataDoughnut" :options="options" />
       </v-col>
-      <v-col cols="12" xl="7" lg="7">
+      <v-col cols="12" xl="7" lg="7" md="7">
         <v-card max-width="480" color="#0E0E12" class="card-border float-left" outlined>
           <v-card-text>
             <v-list-item two-line>
