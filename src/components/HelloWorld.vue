@@ -200,11 +200,11 @@
       <v-col cols="12">
         <v-timeline dense>
           <v-timeline-item v-for="time in timeline" :key="time" small>
+              <span v-if="time.avatar"><v-img src="@/assets/Group.png" contain class="shrink rot8" width="40"></v-img></span>
             <div class="py-4">
               <h2 class="headline font-weight-medium white--text">
                 {{time.title}}
               </h2>
-              <span v-if="time.avatar"><v-img src="@/assets/Group.png" contain class="shrink rot8" width="40"></v-img></span>
               <div>
                 <ul v-for="list in time.lists" :key="list">
                   <li v-html="list" :style="{color: '#788CA0'}"></li>
