@@ -34,7 +34,7 @@
         <v-btn href="#" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Whitepaper</span>
         </v-btn>
-        <v-btn href="#" color="#5127DA" outlined rounded>
+        <v-btn href="https://t.me/qlipit" target="_blank" color="#5127DA" outlined rounded>
           <span class="font-weight-light text-capitalize white--text">Join Community</span>
         </v-btn>
       </div>
@@ -74,22 +74,22 @@
         <v-icon @click="overlay = false" size="1.5x" class="custom-class" style="position: fixed; top: 2%; right: 1.5em;">mdi-close</v-icon>
         <v-row class="text-center">
           <v-col cols="12">
-            <v-btn href="#" text plain :ripple="false">
+            <v-btn href="#mintstore" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Mint Store</span>
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="#" text plain :ripple="false">
+            <v-btn href="#marketplace" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Marketplace</span>
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="#" text plain :ripple="false">
+            <v-btn href="#roadmap" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Roadmap</span>
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="#" text plain :ripple="false">
+            <v-btn href="#qliptoken" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">QLIP Token</span>
             </v-btn>
           </v-col>
@@ -99,7 +99,7 @@
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="#" color="#5127DA" outlined rounded>
+            <v-btn href="https://t.me/qlipit" target="_blank" color="#5127DA" outlined rounded>
               <span class="font-weight-light text-capitalize white--text">Join Community</span>
             </v-btn>
         </v-col>

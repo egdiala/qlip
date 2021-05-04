@@ -26,7 +26,7 @@
 
       <v-col
         class="my-5"
-        cols="12"
+        cols="12" id="mintstore"
       >
         <h1 class="display-2 font-weight-bold mb-3 mt-5">
           QLIP Mint store
@@ -159,7 +159,7 @@
     </v-row>
     <v-row class="my-9">
       <v-col
-        class="mb-5 text-center" cols="12"
+        class="mb-5 text-center" cols="12" id="marketplace"
       >        
         <h1 class="display-2 font-weight-bold mb-3 mt-5">
           QLIP MarketPlace
@@ -189,7 +189,7 @@
     </v-row>
     <v-row class="my-9">
       <v-col
-        class="mb-5 text-center" cols="12"
+        class="mb-5 text-center" cols="12" id="roadmap"
       >        
         <h1 class="display-2 font-weight-bold mb-3 mt-5">
           QLIP Roadmap
@@ -217,7 +217,7 @@
     </v-row>
     <v-row class="my-5">
       <v-col
-        class="mb-5 text-center" cols="12"
+        class="mb-5 text-center" cols="12" id="qliptoken"
       >        
         <h1 class="display-2 font-weight-bold mb-3 mt-5">
           QLIP Token
