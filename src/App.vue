@@ -19,16 +19,16 @@
 
       <v-spacer v-if="!isMobile"></v-spacer>
       <div class="mr-5" v-if="!isMobile">
-        <v-btn href="#" text plain :ripple="false">
+        <v-btn href="#mintstore" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Mint Store</span>
         </v-btn>
-        <v-btn href="#" text plain :ripple="false">
+        <v-btn href="#marketplace" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Marketplace</span>
         </v-btn>
-        <v-btn href="#" text plain :ripple="false">
+        <v-btn href="#roadmap" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Roadmap</span>
         </v-btn>
-        <v-btn href="#" text plain :ripple="false">
+        <v-btn href="#qliptoken" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">QLIP Token</span>
         </v-btn>
         <v-btn href="#" text plain :ripple="false">
