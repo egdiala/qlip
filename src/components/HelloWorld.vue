@@ -284,7 +284,7 @@ import DoughnutChart from "@/components/DoughtnutExample.vue";
           lists: ['20% (200,000 $QLP) of Airdrop allocation for social tasks and bounties ', 'Qlipit.io V1 rolled out with Use case for Journalism, Co-sign feature for the Legal industry. Creation of Cosign App.','Partnership requests with virtual world NFT platforms','Update for Entertainment Commerce and memory makers usecase. Creation of Mint Time App','Vote feature, avatar creating features and more updates update for gaming usecases']
         },
         {
-          title: 'Q4 2021 -Q2 2021',
+          title: 'Q4 2021 -Q2 2022',
           avatar: false,
           lists: ['Update for intellectual property use case.', '40% Airdrop to users who have interacted with Qlip platform and traded a certain volume or currently hold certain Qlip Whitelisted NFTs', 'Defi Integration']
         },
