@@ -59,7 +59,8 @@
         </v-col>
         <v-col color="primary" class="text-justify mt-5" cols="12" md="2">
           <div v-for="url in urls" :key="url" class="pa-2 text-body-2">
-            {{ url }}
+           <a v-if="url.newTab" :href="url.url" target="_blank"> {{ url.name }} </a>
+           <a v-else :href="url.url"> {{ url.name }} </a>
           </div>
         </v-col>
         <v-col color="primary" class="text-justify mt-5" cols="12" md="2">
@@ -122,11 +123,27 @@ export default {
     opacity: 0.9,
     overlay: false,
     urls: [
-        'Mint Store',
-        'Marketplace',
-        'Roadmap',
-        'QLIP Token',
-        'Whitepaper',
+      {
+        name: 'Mint Store',
+        url: '#mintstore'
+      },
+      {
+        name: 'Marketplace',
+        url: '#marketplace'
+      },
+      {
+        name: 'Roadmap',
+        url: '#roadmap'
+      },
+      {
+        name: 'QLIP Token',
+        url: '#qliptoken'
+      },
+      {
+        name: 'Whitepaper',
+        url: 'https://bit.ly/3o3RaBQ',
+        newTab: true
+      },
     ],
     socials: [
       {
