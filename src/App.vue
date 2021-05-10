@@ -31,7 +31,7 @@
         <v-btn href="#qliptoken" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">QLIP Token</span>
         </v-btn>
-        <v-btn href="https://bit.ly/3ewRFRZ" target="_blank" text plain :ripple="false">
+        <v-btn href="https://bit.ly/3o3RaBQ" target="_blank" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Whitepaper</span>
         </v-btn>
         <v-btn href="https://t.me/qlipit" target="_blank" color="#5127DA" outlined rounded>
@@ -94,7 +94,7 @@
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="https://bit.ly/3ewRFRZ" target="_blank" text plain :ripple="false">
+            <v-btn href="https://bit.ly/3o3RaBQ" target="_blank" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Whitepaper</span>
             </v-btn>
           </v-col>
