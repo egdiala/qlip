@@ -37,6 +37,9 @@
         <v-btn href="https://t.me/qlipit" target="_blank" color="#5127DA" outlined rounded>
           <span class="font-weight-light text-capitalize white--text">Join Community</span>
         </v-btn>
+        <v-btn href="#" class="ml-2" color="#5127DA" rounded>
+          <span class="font-weight-light text-capitalize white--text">Private Sale</span>
+        </v-btn>
       </div>
     </v-app-bar>
 
@@ -103,7 +106,12 @@
             <v-btn href="https://t.me/qlipit" target="_blank" color="#5127DA" outlined rounded>
               <span class="font-weight-light text-capitalize white--text">Join Community</span>
             </v-btn>
-        </v-col>
+          </v-col>
+          <v-col cols="12">
+            <v-btn href="#" class="px-8" color="#5127DA" rounded>
+              <span class="font-weight-light text-capitalize white--text">Private Sale</span>
+            </v-btn>
+          </v-col>
       </v-row>
     </v-overlay>
   </v-app>
