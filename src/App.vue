@@ -31,20 +31,20 @@
         <v-btn href="#qliptoken" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">QLIP Token</span>
         </v-btn>
-        <v-btn href="https://bit.ly/3o3RaBQ" target="_blank" text plain :ripple="false">
+        <v-btn :href="`${publicPath}QLIP_Whitepaper.pdf`" download="download" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Whitepaper</span>
         </v-btn>
         <v-btn href="https://t.me/qlipit" target="_blank" color="#5127DA" outlined rounded>
           <span class="font-weight-light text-capitalize white--text">Join Community</span>
         </v-btn>
-        <v-btn href="#" class="ml-2" color="#5127DA" rounded>
+        <v-btn to="/private_sales" class="ml-2" color="#5127DA" rounded>
           <span class="font-weight-light text-capitalize white--text">Private Sale</span>
         </v-btn>
       </div>
     </v-app-bar>
 
     <v-main :style="{background: '#0E0E12'}">
-      <HelloWorld/>
+      <router-view></router-view>
     </v-main>
       <v-footer color="#0E0E12"
     dark
@@ -62,7 +62,7 @@
         </v-col>
         <v-col color="primary" class="text-justify mt-5" cols="12" md="2">
           <div v-for="url in urls" :key="url" class="pa-2 text-body-2">
-           <a v-if="url.newTab" :href="url.url" target="_blank"> {{ url.name }} </a>
+           <a v-if="url.newTab" :href="`${publicPath}QLIP_Whitepaper.pdf`" download="download"> {{ url.name }} </a>
            <a v-else :href="url.url"> {{ url.name }} </a>
           </div>
         </v-col>
@@ -98,7 +98,7 @@
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="https://bit.ly/3o3RaBQ" target="_blank" text plain :ripple="false">
+            <v-btn :href="`${publicPath}QLIP_Whitepaper.pdf`" download="download" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Whitepaper</span>
             </v-btn>
           </v-col>
@@ -108,7 +108,7 @@
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="#" class="px-8" color="#5127DA" rounded>
+            <v-btn to="/private_sales" class="px-8" color="#5127DA" rounded>
               <span class="font-weight-light text-capitalize white--text">Private Sale</span>
             </v-btn>
           </v-col>
@@ -118,18 +118,14 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
 
-  components: {
-    HelloWorld,
-  },
-
   data: () => ({
     opacity: 0.9,
     overlay: false,
+    publicPath: process.env.BASE_URL,
     urls: [
       {
         name: 'Mint Store',
@@ -149,7 +145,6 @@ export default {
       },
       {
         name: 'Whitepaper',
-        url: 'https://bit.ly/3o3RaBQ',
         newTab: true
       },
     ],
