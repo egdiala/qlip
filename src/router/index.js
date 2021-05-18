@@ -7,7 +7,8 @@ Vue.use(VueRouter)
 const routes = [{
         path: '/',
         name: 'Home',
-        component: Home
+        component: Home,
+        props:{default:true,connecter:true},
     },
     {
         path: '/private_sales',

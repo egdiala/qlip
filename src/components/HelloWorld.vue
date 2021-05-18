@@ -10,9 +10,11 @@
           QLIP provides value for creators, collectors, mainstream artists and <br> decentralized store users.
         </p>
 
-        <v-btn class="mt-4 buy" large rounded>
+        <v-btn class="mt-4 buy" large rounded @click="showModal">
           <span class="font-weight-medium text-capitalize white--text pa-4">Buy QLIP Tokens</span>
         </v-btn>
+
+
       </v-col>
 
       <v-col
@@ -128,7 +130,7 @@
     <v-row class="my-9">
       <v-col
         class="mb-5 text-center" cols="12"
-      >        
+      >
         <h1 class="display-2 font-weight-bold mb-3 mt-5">
           QLIP Collectible Gaming
         </h1>
@@ -152,15 +154,15 @@
             ></v-img>
           </v-avatar>
           <small class="ml-2" v-text="icon.title"></small>
-          </v-row>       
+          </v-row>
         </v-card-text>
-      </v-card>   
+      </v-card>
       </v-col>
     </v-row>
     <v-row class="my-9">
       <v-col
         class="mb-5 text-center" cols="12" id="marketplace"
-      >        
+      >
         <h1 class="display-2 font-weight-bold mb-3 mt-5">
           QLIP MarketPlace
         </h1>
@@ -190,7 +192,7 @@
     <v-row class="my-9">
       <v-col
         class="mb-5 text-center" cols="12" id="roadmap"
-      >        
+      >
         <h1 class="display-2 font-weight-bold mb-3 mt-5">
           QLIP Roadmap
         </h1>
@@ -218,7 +220,7 @@
     <v-row class="my-5">
       <v-col
         class="mb-5 text-center" cols="12" id="qliptoken"
-      >        
+      >
         <h1 class="display-2 font-weight-bold mb-3 mt-5">
           QLIP Token
         </h1>
@@ -266,7 +268,10 @@ import DoughnutChart from "@/components/DoughtnutExample.vue";
   export default {
     name: 'HelloWorld',
     components: { DoughnutChart },
+    props:['connectWallet','sendFunds','showModal'],
     data: () => ({
+      activebuy:false,
+      amount:"",
       timeline: [
         {
           title: 'Q4 2020 -Q1 2021',
@@ -390,6 +395,14 @@ import DoughnutChart from "@/components/DoughtnutExample.vue";
         },
       ],
     }),
+    methods:{
+      connect(){
+        this.connectWallet();
+      },
+      sender(){
+        this.sendFunds(this.amount);
+      },
+    }
   }
 </script>
 

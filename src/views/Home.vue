@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld></HelloWorld>
+    <HelloWorld :connectWallet="()=>connectWallet()" :sendFunds="(amount)=>sendFunds(amount)" :showModal="()=>showModal()"></HelloWorld>
   </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
-  }
+  },
+  props:['connectWallet','sendFunds',"showModal"],
 }
 </script>

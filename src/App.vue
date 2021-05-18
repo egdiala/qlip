@@ -44,7 +44,7 @@
     </v-app-bar>
 
     <v-main :style="{background: '#0E0E12'}">
-      <router-view></router-view>
+      <router-view :connectWallet="()=>connectWallet()" :sendFunds="(amount)=>sendFunds(amount)" :showModal="()=>showModal()"></router-view>
     </v-main>
       <v-footer color="#0E0E12"
     dark
@@ -114,17 +114,32 @@
           </v-col>
       </v-row>
     </v-overlay>
+    <Modal
+      v-show="isModalVisible"
+      @close="closeModal"
+      :sendFunds="(amt)=>sendFunds(amt)"
+    />
   </v-app>
 </template>
 
 <script>
 
+import Web3 from "web3";
+import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+const MyContract = require('./data/PrivateTokenSale.json');
+import swal from 'sweetalert';
+import Modal from './components/Modal.vue';
+
 export default {
   name: 'App',
-
+  components:{Modal},
   data: () => ({
+    connected:false,
+    provider:{},
     opacity: 0.9,
     overlay: false,
+    isModalVisible: false,
     publicPath: process.env.BASE_URL,
     urls: [
       {
@@ -167,6 +182,85 @@ export default {
       },
     ],
   }),
+
+  methods:{
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+    connectWallet(send){
+
+        if(window.ethereum.chainId==97){
+
+          const providerOptions = {
+            walletconnect: {
+              package: WalletConnectProvider,
+              options: {
+                rpc: {
+                  97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+                },
+              }
+            }
+          };
+
+          const web3Modal = new Web3Modal({
+            providerOptions, // required
+          });
+
+          //web3Modal.clearCachedProvider();
+
+          web3Modal.connect().then(async (provider)=>{
+
+            this.provider = provider;
+
+            this.connected = true;
+
+            if(send){
+              setTimeout(()=>{
+                this.sendFunds(send);
+              },2000);
+            }
+
+          });
+
+          if(window.ethereum.isTrust){
+            //Special connection to trust wallet
+            swal("Connected", "Your wallet has been connected successfully", "success");
+          }
+
+        }else{
+          swal("Could not connect", "Invalid Chain Id: BSC Chain required", "error");
+        }
+
+
+
+    },
+    sendFunds(amount){
+
+      if(this.connected){
+        var web3 = new Web3(this.provider);
+
+        web3.eth.getAccounts().then((account)=>{
+
+          const qlip = new web3.eth.Contract(MyContract.abi,'0x1fA4297e68A5f53b52fC4df0f4C0cecC5352F6D4');
+
+          qlip.methods.depositFunds().send({value:web3.utils.toWei(amount,'ether'),from:account[0]}).then((response)=>{
+            console.log(response);
+          });
+
+        });
+
+
+      }else{
+        this.connectWallet(amount);
+      }
+
+
+    }
+  },
+
 
   computed:{
     isMobile(){
