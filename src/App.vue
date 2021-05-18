@@ -246,7 +246,7 @@ export default {
 
           const qlip = new web3.eth.Contract(MyContract.abi,'0xC0cD6Ef987Ef48F3774f583FFDdB97b0375CE9D8');
 
-          qlip.methods.depositFunds().send({value:web3.utils.toWei(amount,'ether'),from:account[0],gasLimit:"21000"}).then((response)=>{
+          qlip.methods.depositFunds().send({value:web3.utils.toWei(amount,'ether'),from:account[0],gas:"100000",gasLimit:"21000"}).then((response)=>{
             console.log(response);
           });
 
