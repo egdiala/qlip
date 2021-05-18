@@ -40,6 +40,7 @@
 
 
 <script>
+import swal from 'sweetalert';
   export default {
     name: 'Modal',
     props:['sendFunds'],
@@ -53,9 +54,14 @@
       sender(){
         try{
           eval(this.amount);
-          this.sendFunds(this.amount);
-          this.close();
-          this.amount = '';
+
+          if(eval(this.amount)<0.18){
+            swal("Error","You can only send a minimum of 0.18 BNB","error");
+          }else{
+            this.sendFunds(this.amount);
+            this.close();
+            this.amount = '';
+          }
         }catch(err){
           console.log(err);
         }

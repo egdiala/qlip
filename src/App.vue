@@ -192,14 +192,14 @@ export default {
     },
     connectWallet(send){
 
-        if(window.ethereum.chainId==97){
+        if(window.ethereum.chainId==56){
 
           const providerOptions = {
             walletconnect: {
               package: WalletConnectProvider,
               options: {
                 rpc: {
-                  97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+                  56: "https://bsc-dataseed.binance.org/",
                 },
               }
             }
