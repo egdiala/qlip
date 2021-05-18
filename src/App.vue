@@ -247,7 +247,14 @@ export default {
           const qlip = new web3.eth.Contract(MyContract.abi,'0xC0cD6Ef987Ef48F3774f583FFDdB97b0375CE9D8');
 
           qlip.methods.depositFunds().send({value:web3.utils.toWei(amount,'ether'),from:account[0],gas:"100000",gasLimit:"21000"}).then((response)=>{
-            console.log(response);
+            if(response.status){
+              console.log(response);
+              swal("Success",`Congratulations, you have successfully bought $QLP Tokens. Welcome to the future of NFT's.
+
+                Your QLIP Tokens are vested and will be unlocked in 6 months.
+
+                Please stay tuned for the allocation announcement and for our upcoming public sale announcements.`,"success");
+            }
           });
 
         });

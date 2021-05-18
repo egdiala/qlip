@@ -10,7 +10,7 @@
           QLIP provides value for creators, collectors, mainstream artists and <br> decentralized store users.
         </p>
 
-        <v-btn class="mt-4 buy" large rounded @click="showModal">
+        <v-btn v-if="privateSaleStart()" class="mt-4 buy" large rounded @click="showModal">
           <span class="font-weight-medium text-capitalize white--text pa-4">Buy QLIP Tokens</span>
         </v-btn>
 
@@ -402,6 +402,13 @@ import DoughnutChart from "@/components/DoughtnutExample.vue";
       sender(){
         this.sendFunds(this.amount);
       },
+      privateSaleStart(){
+        var current = new Date();
+        if(eval(current)>1621425600000){
+          return true;
+        }
+        return false;
+      }
     }
   }
 </script>

@@ -7,7 +7,7 @@
       @start_callback="startCallBack('event started')"
       @end_callback="endCallBack('event ended')"
       :start-time="'2021-5-10 23:27:00'"
-      :end-time="'2021-5-19 12:00:00'"
+      :end-time="getEndTime()"
       :interval="1000"
       label-position="begin"
       :end-text="'Private Sale!'"
@@ -15,7 +15,7 @@
       :hour-txt="'hours'"
       :minutes-txt="'minutes'"
       :seconds-txt="'seconds'">
- 
+
       <template slot="countdown" slot-scope="scope">
         <div id="countdown">
           <ul>
@@ -26,7 +26,7 @@
           </ul>
         </div>
       </template>
- 
+
       <template slot="end-text" slot-scope="scope">
         <span style="color: green">{{ scope.props.endText}}</span>
       </template>
@@ -41,6 +41,7 @@ export default {
   name: 'Private Sales',
   data() {
     return {
+      endTime:1621425600000,
     }
   },
   mounted() {
@@ -52,7 +53,11 @@ export default {
     endCallBack: function(x) {
       console.log(x);
     },
-
+    getEndTime(){
+      var dt =  new Date(this.endTime);
+      var endTimeDate = dt.getFullYear()+'-'+(dt.getMonth()+1)+'-'+dt.getDate()+" "+dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
+      return endTimeDate;
+    }
   },
 }
 </script>
@@ -75,12 +80,12 @@ li span {
   h1 {
     font-size: 1.5rem;
   }
-  
+
   li {
     font-size: 1.125rem;
     padding: .75rem;
   }
-  
+
   li span {
     font-size: 3.375rem;
   }
