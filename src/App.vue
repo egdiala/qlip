@@ -192,7 +192,7 @@ export default {
     },
     connectWallet(send){
 
-        if(window.ethereum.chainId==56){
+        if(window.ethereum.chainId==97){
 
           const providerOptions = {
             walletconnect: {
