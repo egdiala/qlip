@@ -44,7 +44,7 @@
     </v-app-bar>
 
     <v-main :style="{background: '#0E0E12'}">
-      <router-view :connectWallet="()=>connectWallet()" :sendFunds="(amount)=>sendFunds(amount)" :showModal="()=>showModal()"></router-view>
+      <router-view :connectWallet="()=>connectWallet()" :sendFunds="(amount)=>sendFunds(amount)" :showModal="()=>showModal()" :checkSaleAmount="()=>checkSaleAmount()"></router-view>
     </v-main>
       <v-footer color="#0E0E12"
     dark
@@ -192,14 +192,14 @@ export default {
     },
     connectWallet(send){
 
-        if(window.ethereum.chainId==97){
+        if(window.ethereum.chainId==56){
 
           const providerOptions = {
             walletconnect: {
               package: WalletConnectProvider,
               options: {
                 rpc: {
-                  97: "https://data-seed-prebsc-1-s1.binance.org:8545",
+                  56: "https://bsc-dataseed.binance.org",
                 },
               }
             }
@@ -244,7 +244,7 @@ export default {
 
         web3.eth.getAccounts().then((account)=>{
 
-          const qlip = new web3.eth.Contract(MyContract.abi,'0x8c142ae01569ED64079f1DcE1B830eA9eB92b047');
+          const qlip = new web3.eth.Contract(MyContract.abi,'0xE96023c9A854c3b4d535C8Ab804a9b8Cc08479df');
 
           qlip.methods.depositFunds().send({value:web3.utils.toWei(amount,'ether'),from:account[0],gas:"100000",gasLimit:"21000"}).then((response)=>{
             if(response.status){
@@ -264,6 +264,10 @@ export default {
         this.connectWallet(amount);
       }
 
+
+    },
+
+    checkSaleAmount(){
 
     }
   },

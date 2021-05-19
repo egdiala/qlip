@@ -268,7 +268,7 @@ import DoughnutChart from "@/components/DoughtnutExample.vue";
   export default {
     name: 'HelloWorld',
     components: { DoughnutChart },
-    props:['connectWallet','sendFunds','showModal'],
+    props:['connectWallet','sendFunds','showModal','checkSaleAmount'],
     data: () => ({
       activebuy:false,
       amount:"",
@@ -407,7 +407,7 @@ import DoughnutChart from "@/components/DoughtnutExample.vue";
         if(eval(current)>1621425600000){
           return true;
         }
-        return true;
+        return false;
       }
     }
   }
