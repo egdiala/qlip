@@ -407,7 +407,7 @@ import DoughnutChart from "@/components/DoughtnutExample.vue";
         if(eval(current)>1621425600000){
           return true;
         }
-        return false;
+        return true;
       }
     }
   }
