@@ -199,7 +199,7 @@ export default {
               package: WalletConnectProvider,
               options: {
                 rpc: {
-                  56: "https://bsc-dataseed.binance.org/",
+                  97: "https://data-seed-prebsc-1-s1.binance.org:8545",
                 },
               }
             }
@@ -244,7 +244,7 @@ export default {
 
         web3.eth.getAccounts().then((account)=>{
 
-          const qlip = new web3.eth.Contract(MyContract.abi,'0xC0cD6Ef987Ef48F3774f583FFDdB97b0375CE9D8');
+          const qlip = new web3.eth.Contract(MyContract.abi,'0x8c142ae01569ED64079f1DcE1B830eA9eB92b047');
 
           qlip.methods.depositFunds().send({value:web3.utils.toWei(amount,'ether'),from:account[0],gas:"100000",gasLimit:"21000"}).then((response)=>{
             if(response.status){

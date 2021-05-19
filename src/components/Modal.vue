@@ -55,11 +55,11 @@ import swal from 'sweetalert';
         try{
           eval(this.amount);
 
-          if(eval(this.amount)<=0.18){
-            swal("Error","You can only send a value greater than of 0.18 BNB","error");
+          if(eval(this.amount)<0.2){
+            swal("Error","You can only send a value greater than of 0.2 BNB","error");
           }else{
-            if(eval(this.amount)>2){
-              swal("Error","You can only send a maximum of 2 BNB","error");
+            if(eval(this.amount)>2.3){
+              swal("Error","You can only send a maximum of 2.3 BNB","error");
             }else{
               this.sendFunds(this.amount);
               this.close();
