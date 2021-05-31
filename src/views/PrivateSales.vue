@@ -1,8 +1,8 @@
 <template>
 <v-container>
-    <v-row class="text-center d-flex align-center">
-      <v-col cols="12" class="my-5">
-        <h1 class="font-weight-light">COUNTDOWN TO PRIVATE SALES</h1>
+    <v-row class="d-flex align-center">
+      <v-col v-if="!ended" cols="12" class="text-center my-5">
+        <h1 class="font-weight-light">{{ ended ? 'PRIVATE SALE IS NOW LIVE!' : 'COUNTDOWN TO PRIVATE SALES' }}</h1>
             <vue-countdown-timer id="timer"
       @start_callback="startCallBack('event started')"
       @end_callback="endCallBack('event ended')"
@@ -10,7 +10,7 @@
       :end-time="getEndTime()"
       :interval="1000"
       label-position="begin"
-      :end-text="'Private Sale!'"
+      :end-text="''"
       :day-txt="'days'"
       :hour-txt="'hours'"
       :minutes-txt="'minutes'"
@@ -19,10 +19,10 @@
       <template slot="countdown" slot-scope="scope">
         <div id="countdown">
           <ul>
-            <li><span id="days">{{scope.props.days}}</span>{{scope.props.dayTxt}}</li>
-            <li><span id="hours">{{scope.props.hours}}</span>{{scope.props.hourTxt}}</li>
-            <li><span id="minutes">{{scope.props.minutes}}</span>{{scope.props.minutesTxt}}</li>
-            <li><span id="seconds">{{scope.props.seconds}}</span>{{scope.props.secondsTxt}}</li>
+            <li class="countLi"><span id="days">{{scope.props.days}}</span>{{scope.props.dayTxt}}</li>
+            <li class="countLi"><span id="hours">{{scope.props.hours}}</span>{{scope.props.hourTxt}}</li>
+            <li class="countLi"><span id="minutes">{{scope.props.minutes}}</span>{{scope.props.minutesTxt}}</li>
+            <li class="countLi"><span id="seconds">{{scope.props.seconds}}</span>{{scope.props.secondsTxt}}</li>
           </ul>
         </div>
       </template>
@@ -31,17 +31,28 @@
         <span style="color: green">{{ scope.props.endText}}</span>
       </template>
     </vue-countdown-timer>
+
       </v-col>
+    <v-col v-else>
+      <h1 class="font-weight-light text-center">{{ ended ? 'PRIVATE SALE IS NOW LIVE!' : 'COUNTDOWN TO PRIVATE SALES' }}</h1>
+      <p class="text-center">To participate in the private sale, make sure you have at least 0.25 bnb</p>
+      <ol class="mx-auto">
+        <li>Connect your wallet to <a href="https://www.qlipit.io" target="_blank">qlipit.io</a></li>
+        <li>Click on "BUY QLIP TOKENS" on the home page.</li>
+        <li>Input the amount of BNB and complete the transaction (Max 2 BNB)</li>
+      </ol>
+    </v-col>
     </v-row>
 </v-container>
 </template>
 
 <script>
 export default {
-  name: 'Private Sales',
+  name: 'PrivateSales',
   data() {
     return {
       endTime:1621425600000,
+      ended: false
     }
   },
   mounted() {
@@ -52,6 +63,7 @@ export default {
     },
     endCallBack: function(x) {
       console.log(x);
+      this.ended = true;
     },
     getEndTime(){
       var dt =  new Date(this.endTime);
@@ -63,7 +75,7 @@ export default {
 </script>
 
 <style scoped>
-li {
+.countLi {
   display: inline-block;
   font-size: 1.5em;
   list-style-type: none;
@@ -71,9 +83,14 @@ li {
   text-transform: uppercase;
 }
 
-li span {
+.countLi span {
   display: block;
   font-size: 4.5rem;
+}
+
+a {
+  color: blue;
+  text-decoration-line: none;
 }
 
 @media all and (max-width: 768px) {
@@ -81,12 +98,12 @@ li span {
     font-size: 1.5rem;
   }
 
-  li {
+  .countLi {
     font-size: 1.125rem;
     padding: .75rem;
   }
 
-  li span {
+  .countLi span {
     font-size: 3.375rem;
   }
 }

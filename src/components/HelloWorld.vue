@@ -21,7 +21,7 @@
         class="my-5"
         cols="12"
       >
-        <v-row justify="center">
+        <v-row class="justify-center">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/Zj58i_j17YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </v-row>
       </v-col>
@@ -38,7 +38,7 @@
           Mint your artworks of any format, audio, text, video, or Picture, with low fees
         </p>
 
-        <v-row justify="center">
+        <v-row class="justify-center">
           <v-card class="text-center card-border mt-5 pa-5" color="#0E0E12">
             <v-card-text class="px-9">
               <v-avatar color="#16161E" size="90"><v-img src="@/assets/icons8_paint.png" width="40" contain class="shrink"></v-img></v-avatar>
@@ -142,11 +142,11 @@
     </v-row>
     <v-row>
       <v-col
-        cols="12" xl="4" lg="4" md="4" class="d-flex flex-column" v-for="icon in recent" :key="icon.title"
+        cols="12" xl="4" lg="4" md="4" class="d-flex flex-column" v-for="(icon, i) in recent" :key="i"
       >
       <v-card width="350" color="#0E0E12" class="card-border pa-5 mx-auto flex d-flex flex-column" outlined>
         <v-card-text>
-          <v-row align="center" justify="between">
+          <v-row align="center" class="justify-between">
           <v-avatar size="50" color="#16161E" >
             <v-img
               :alt="`${icon.title} avatar`"
@@ -174,7 +174,7 @@
     </v-row>
     <v-row class="ma-2">
       <v-col
-        cols="12" xl="4" lg="4" md="4" v-for="place in marketplace" :key="place" class="d-flex flex-column"
+        cols="12" xl="4" lg="4" md="4" v-for="(place, p) in marketplace" :key="p" class="d-flex flex-column"
       >
         <v-card width="350" color="#0E0E12" class="card-border px-5 mx-auto flex d-flex flex-column" outlined>
           <v-card-text class="mt-3 mb-9">
@@ -201,14 +201,14 @@
     <v-row class="ma-2">
       <v-col cols="12">
         <v-timeline dense>
-          <v-timeline-item v-for="time in timeline" :key="time" small>
+          <v-timeline-item v-for="(time, t) in timeline" :key="t" small>
               <span v-if="time.avatar"><v-img src="@/assets/Group.png" contain class="shrink rot8" width="40"></v-img></span>
             <div class="py-4">
               <h2 class="headline font-weight-medium white--text">
                 {{time.title}}
               </h2>
               <div>
-                <ul v-for="list in time.lists" :key="list">
+                <ul v-for="(list, l) in time.lists" :key="l">
                   <li v-html="list" :style="{color: '#788CA0'}"></li>
                 </ul>
               </div>
@@ -248,7 +248,7 @@
               </v-list-item-content>
             </v-list-item>
             <v-row class="px-2">
-              <v-col cols="12" xl="6" lg="6" v-for="item in items" :key="item">
+              <v-col cols="12" xl="6" lg="6" v-for="(item, m) in items" :key="m">
                 <v-icon :color="item.icon">
                   mdi-circle-medium
                 </v-icon>

@@ -19,16 +19,16 @@
 
       <v-spacer v-if="!isMobile"></v-spacer>
       <div class="mr-5" v-if="!isMobile">
-        <v-btn href="#mintstore" text plain :ripple="false">
+        <v-btn href="/#mintstore" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Mint Store</span>
         </v-btn>
-        <v-btn href="#marketplace" text plain :ripple="false">
+        <v-btn href="/#marketplace" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Marketplace</span>
         </v-btn>
-        <v-btn href="#roadmap" text plain :ripple="false">
+        <v-btn href="/#roadmap" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Roadmap</span>
         </v-btn>
-        <v-btn href="#qliptoken" text plain :ripple="false">
+        <v-btn href="/#qliptoken" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">QLIP Token</span>
         </v-btn>
         <v-btn :href="`${publicPath}QLIP_Whitepaper.pdf`" download="download" text plain :ripple="false">
@@ -52,7 +52,7 @@
   >
   <v-container>
     <v-row>
-        <v-col color="primary" class="text-justify mt-5" cols="12" xl="5" lg="5">
+        <v-col color="primary" class="text-justify mt-5" cols="5" xl="5" lg="5">
             <v-list-item>
                 <v-img src="@/assets/logo_footer.png" class="shrink mr-2" width="30" contain></v-img>
               <v-list-item-content>
@@ -60,14 +60,14 @@
               </v-list-item-content>
             </v-list-item>
         </v-col>
-        <v-col color="primary" class="text-justify mt-5" cols="12" md="2">
-          <div v-for="url in urls" :key="url" class="pa-2 text-body-2">
+        <v-col color="primary" class="text-justify mt-5" cols="4" md="4">
+          <div v-for="(url, u) in urls" :key="u" class="pa-2 text-body-2">
            <a v-if="url.newTab" :href="`${publicPath}QLIP_Whitepaper.pdf`" download="download"> {{ url.name }} </a>
            <a v-else :href="url.url"> {{ url.name }} </a>
           </div>
         </v-col>
-        <v-col color="primary" class="text-justify mt-5" cols="12" md="2">
-          <div v-for="social in socials" :key="social" class="pa-2 text-body-2">
+        <v-col color="primary" class="text-justify mt-5" cols="3" md="3">
+          <div v-for="(social, s) in socials" :key="s" class="pa-2 text-body-2">
            <a :href="social.url" target="_blank"> {{ social.name }} </a>
           </div>
         </v-col>
@@ -78,22 +78,22 @@
         <v-icon @click="overlay = false" size="1.5x" class="custom-class" style="position: fixed; top: 2%; right: 1.5em;">mdi-close</v-icon>
         <v-row class="text-center">
           <v-col cols="12">
-            <v-btn href="#mintstore" text plain :ripple="false">
+            <v-btn href="/#mintstore" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Mint Store</span>
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="#marketplace" text plain :ripple="false">
+            <v-btn href="/#marketplace" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Marketplace</span>
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="#roadmap" text plain :ripple="false">
+            <v-btn href="/#roadmap" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Roadmap</span>
             </v-btn>
           </v-col>
           <v-col cols="12">
-            <v-btn href="#qliptoken" text plain :ripple="false">
+            <v-btn href="/#qliptoken" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">QLIP Token</span>
             </v-btn>
           </v-col>
@@ -144,19 +144,19 @@ export default {
     urls: [
       {
         name: 'Mint Store',
-        url: '#mintstore'
+        url: '/#mintstore'
       },
       {
         name: 'Marketplace',
-        url: '#marketplace'
+        url: '/#marketplace'
       },
       {
         name: 'Roadmap',
-        url: '#roadmap'
+        url: '/#roadmap'
       },
       {
         name: 'QLIP Token',
-        url: '#qliptoken'
+        url: '/#qliptoken'
       },
       {
         name: 'Whitepaper',
