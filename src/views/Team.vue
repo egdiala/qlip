@@ -1,8 +1,8 @@
 <template>
   <v-container>
       <v-row>
-          <v-col v-for="(member, m) in members" :key="m" cols="12" xl="4" lg="4" md="12" sm="12">
-            <v-card min-width="300" dark color="#0E0E12" class="card-border mx-auto" outlined>
+          <v-col v-for="(member, m) in members" :key="m" cols="12" xl="4" lg="4" md="12" sm="12" class="d-flex flex-column">
+            <v-card min-width="300" dark color="#0E0E12" class="card-border mx-auto flex d-flex flex-column" outlined>
                 <v-card-title>
                     <v-list-item class="grow">
                         <v-list-item-avatar size="60" color="grey darken-3">
