@@ -413,7 +413,7 @@ import DoughnutChart from "@/components/DoughtnutExample.vue";
   }
 </script>
 
-<style scoped>
+<style>
 .buy {
   background: linear-gradient(180deg, #5429E1 0%, #441EBF 100%);
 }

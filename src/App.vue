@@ -34,6 +34,9 @@
         <v-btn :href="`${publicPath}QLIP_Whitepaper.pdf`" download="download" text plain :ripple="false">
           <span class="font-weight-light text-capitalize white--text">Whitepaper</span>
         </v-btn>
+        <v-btn to="/team" text plain :ripple="false">
+          <span class="font-weight-light text-capitalize white--text">Team</span>
+        </v-btn>
         <v-btn href="https://t.me/qlipit" target="_blank" color="#5127DA" outlined rounded>
           <span class="font-weight-light text-capitalize white--text">Join Community</span>
         </v-btn>
@@ -100,6 +103,11 @@
           <v-col cols="12">
             <v-btn :href="`${publicPath}QLIP_Whitepaper.pdf`" download="download" text plain :ripple="false">
               <span class="font-weight-light text-capitalize white--text">Whitepaper</span>
+            </v-btn>
+          </v-col>
+          <v-col cols="12">
+            <v-btn to="/team" text plain :ripple="false">
+              <span class="font-weight-light text-capitalize white--text">Team</span>
             </v-btn>
           </v-col>
           <v-col cols="12">

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Team from '../views/Team.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +9,11 @@ const routes = [{
         path: '/',
         name: 'Home',
         component: Home,
-        props:{default:true,connecter:true},
+        props: { default: true, connecter: true },
+    }, {
+        path: '/team',
+        name: 'Team',
+        component: Team,
     },
     {
         path: '/private_sales',
